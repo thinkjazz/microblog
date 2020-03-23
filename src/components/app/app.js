@@ -6,6 +6,13 @@ import PostList from "../postList";
 import PostAddForm from "../postAddForm";
 import "./app.css";
 let App = () => {
+    let data = [
+        {label: 'Going to learn React', important: true, id: 'fff'},
+        {label: 'Going to learn Vue', important: false, id: 2},
+        {label: 'Going to learn GraphQL and ApolloClient', important: false, id: 3},
+        {label: 'Going to learn GraphQL', important: true, id: 4},
+        {label: 'Learning JavaScript', important: true , id: 5}
+    ];
     return (
         <div className="app">
             <AppHeader/>
@@ -14,7 +21,7 @@ let App = () => {
                 <PostStatus/>
 
             </div>
-            <PostList/>
+            <PostList posts = {data}/>
             <PostAddForm/>
         </div>
 
