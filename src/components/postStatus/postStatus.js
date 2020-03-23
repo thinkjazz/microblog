@@ -3,8 +3,8 @@ import "./postStatus.css"
 const PostStatus = () => {
     return (
         <div className="btn-group">
-            <button>4</button>
-            <button>5</button>
+            <button type ='button' className='btn btn-warning'>Все</button>
+            <button type ='button' className='btn btn-outline-danger'>Понравилось</button>
         </div>
     )
 }
