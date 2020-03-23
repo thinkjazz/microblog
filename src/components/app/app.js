@@ -5,6 +5,17 @@ import PostStatus from "../postStatus";
 import PostList from "../postList";
 import PostAddForm from "../postAddForm";
 import "./app.css";
+
+import styled from "styled-components";
+
+let AppBlock = styled.div`
+      margin: 60px auto;
+      max-width: 800px;
+`;
+
+let StyledAppBlock = styled(AppBlock)`
+    background-color: #f8a5c2;
+`;
 let App = () => {
     let data = [
         {label: 'Going to learn React', important: true, id: 'fff'},
@@ -14,7 +25,7 @@ let App = () => {
         {label: 'Learning JavaScript', important: true , id: 5}
     ];
     return (
-        <div className="app">
+        <AppBlock>
             <AppHeader/>
             <div className ="search-panel d-flex">
                 <SearchPanel/>
@@ -23,7 +34,7 @@ let App = () => {
             </div>
             <PostList posts = {data}/>
             <PostAddForm/>
-        </div>
+        </AppBlock>
 
 
     )
