@@ -23,8 +23,9 @@ export default class App extends Component {
         };
         this.deleteItem = this.deleteItem.bind( this );
         this.addItem = this.addItem.bind( this );
-        this.onToggleImportant = this.onToggleImportant.bind( this );
-        this.onToggleLiked = this.onToggleLiked.bind( this );
+        this.onToggleImportantAndLiked = this.onToggleImportantAndLiked.bind( this );
+        // this.onToggleImportant = this.onToggleImportant.bind( this );
+        // this.onToggleLiked = this.onToggleLiked.bind( this );
         this.onUpdateSearch = this.onUpdateSearch.bind( this );
         this.onFilterSelect = this.onFilterSelect.bind( this )
     }
@@ -59,28 +60,37 @@ export default class App extends Component {
         } )
 
     }
-
-    onToggleImportant(id) {
+    onToggleImportantAndLiked(id) {
         this.setState( ({data}) => {
             let index = data.findIndex( element => element.id === id );
             let oldIndex = data[index];
-            let newItem = {...oldIndex, important: !oldIndex.important};
+            let newItem = {...oldIndex, important: !oldIndex.important, like: !oldIndex.like };
 
             let newArr = [...data.slice( 0, index ), newItem, ...data.slice( index + 1 )];
             return {data: newArr}
         } )
     }
-
-    onToggleLiked(id) {
-        this.setState( ({data}) => {
-            let index = data.findIndex( element => element.id === id );
-            let oldIndex = data[index];
-            let newItem = {...oldIndex, like: !oldIndex.like};
-
-            let newArr = [...data.slice( 0, index ), newItem, ...data.slice( index + 1 )];
-            return {data: newArr}
-        } )
-    }
+    // onToggleImportant(id) {
+    //     this.setState( ({data}) => {
+    //         let index = data.findIndex( element => element.id === id );
+    //         let oldIndex = data[index];
+    //         let newItem = {...oldIndex, important: !oldIndex.important};
+    //
+    //         let newArr = [...data.slice( 0, index ), newItem, ...data.slice( index + 1 )];
+    //         return {data: newArr}
+    //     } )
+    // }
+    //
+    // onToggleLiked(id) {
+    //     this.setState( ({data}) => {
+    //         let index = data.findIndex( element => element.id === id );
+    //         let oldIndex = data[index];
+    //         let newItem = {...oldIndex, like: !oldIndex.like};
+    //
+    //         let newArr = [...data.slice( 0, index ), newItem, ...data.slice( index + 1 )];
+    //         return {data: newArr}
+    //     } )
+    // }
 
     searchPost(items, term) {
         if (term.length === 0) {
@@ -128,8 +138,9 @@ export default class App extends Component {
                 <PostList
                     posts={visiblePost}
                     onDelete={this.deleteItem}
-                    onToggleImportant={this.onToggleImportant}
-                    onToggleLiked={this.onToggleLiked}
+                    onToggleImportantAndLiked={this.onToggleImportantAndLiked}
+                    // onToggleImportant={this.onToggleImportant}
+                    // onToggleLiked={this.onToggleLiked}
                 />
                 <PostAddForm
                     onAdd={this.addItem}
