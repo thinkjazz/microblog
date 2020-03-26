@@ -52,3 +52,6 @@
 .app-list-item.important .btn-star {
     color: #aeaeae;
 }
+.app-list .list-group-item {
+    background: #fdcb6e;
+}
