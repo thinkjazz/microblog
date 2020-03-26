@@ -45,7 +45,7 @@ export default class PostAddForm extends Component {
                 />
                 <button
                     type="submit"
-                    className="btn btn-outline-primary"
+                    className="btn btn-outline-success"
                     disabled={!this.state.text}
                 >Добавить пост
                 </button>
