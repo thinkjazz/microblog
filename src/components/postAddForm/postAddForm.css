@@ -7,3 +7,11 @@
   flex-grow: 1;
   margin-right: 3px;
 }
+.btn-outline-success {
+  color: #00b894;
+  border-color: #00b894;
+}
+.btn-success {
+  color: #00b894;
+  border-color: #00b894;
+}
